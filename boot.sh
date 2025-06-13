@@ -98,7 +98,7 @@ arch-chroot /mnt pacman --noconfirm --asdeps -S git jshon
 
 arch-chroot /mnt git clone https://github.com/oshazard/apacman.git /root/apacman
 
-arch-chroot /mnt pacman -S bc cronie dbus-glib efibootmgr htop i7z linux linux-headers linux-lts linux-lts-headers tmux vim multitail netctl man nano gdb lsof mutt openssh perf pkgfile powerline python-configobj python-msgpack rlwrap
+arch-chroot /mnt pacman -S bc cronie dbus-glib efibootmgr htop i7z linux linux-headers linux-lts linux-lts-headers tmux vim multitail netctl man nano gdb lsof mutt openssh perf pkgfile powerline python-configobj python-msgpack rlwrap net-tools inetutils ethtool
 arch-chroot /mnt pacman -S python-pandas python-psutil python-pyinotify python-setproctitle python-tornado python2-gobject r rsync s3cmd socat
 
 arch-chroot /mnt bootctl install
