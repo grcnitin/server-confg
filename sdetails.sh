@@ -68,6 +68,10 @@ lsblk >> $x.txt
 echo "************************ IP Address  ************************" >> $x.txt
 ip a >> $x.txt
 
+# Append Exanic Driver Check
+echo "************************ Exanic Driver ************************" >> $x.txt
+lsmod | grep exanic >> $x.txt
+
 # Write Boot Parameters section
 echo "************************ Boot Parameters ************************" >> $x.txt
 cat /proc/cmdline >> $x.txt
