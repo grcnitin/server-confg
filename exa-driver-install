@@ -1,0 +1,37 @@
+#!/bin/bash
+# exanic_install.sh
+# Script to install ExaNIC driver from exanic_gcc12_direct.zip on Arch Linux
+
+set -e  # Exit on error
+
+ZIP_FILE="exanic_gcc12_direct.zip"
+TMP_DIR="/root/exanictmp"
+
+# Step 1 – Check if ZIP exists
+if [ ! -f "$ZIP_FILE" ]; then
+    echo "Error: $ZIP_FILE not found in current directory."
+    exit 1
+fi
+
+# Step 2 – Create temp directory
+mkdir -p "$TMP_DIR"
+
+# Step 3 – Unzip
+echo "Unzipping $ZIP_FILE..."
+unzip -o "$ZIP_FILE"
+
+# Step 4 – Copy files
+echo "Copying files to $TMP_DIR..."
+cp -r exanic_gcc12_direct/* "$TMP_DIR/"
+
+# Step 5 – Change to temp dir
+cd "$TMP_DIR"
+
+# Step 6 – Make install script executable
+chmod 777 install_exanic.sh
+
+# Step 7 – Run installer
+echo "Running install_exanic.sh..."
+sh install_exanic.sh
+
+echo "✅ ExaNIC driver installation complete."
