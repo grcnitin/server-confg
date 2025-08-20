@@ -250,6 +250,7 @@ echo
 echo "CHECK 18"
 echo "Bashrc setting for trading user"
 sudo cp /root/.bashrc /home/trading/.bashrc
+sudo cp /root/.bash_profile /home/trading/.bash_profile
 echo "Verifying content"
 cat /home/trading/.bashrc
 echo
